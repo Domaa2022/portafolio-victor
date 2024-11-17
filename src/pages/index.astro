@@ -5,17 +5,120 @@ import MenuDropdown from '../components/MenuDropdown.jsx';
 
 <Layout title="Portafolio, Victor Barahona">
 	<main class="m-4 sm:m-8 sm:mx-20 md:m-7 xl:mx-48">
-		<nav class="flex flex-row md:flex-row w-full justify-between mt-3 gap-4">
+
+		{/* Navigation Bar  */}
+		<nav class="fixed top-0 left-0 w-full z-50 flex flex-row md:flex-row justify-between gap-4 bg-white px-4 py-2 md:py-4">
 			<MenuDropdown client:load />
-			<ul class="hidden md:flex md:w-[1000px]  h-[74px] items-center justify-around bg-[#EDEDED] rounded-2xl font-normal  md:text-xl lg:text-2xl  ">
-				<li class="hover:text-teal-500 cursor-pointer" >About me</li>
-				<li class="hover:text-teal-500 cursor-pointer" >Skills</li>
-				<li class="hover:text-teal-500 cursor-pointer" >Education</li>
-				<li class="hover:text-teal-500 cursor-pointer" >Experience</li>
+			<ul class="hidden md:flex md:w-[1000px] h-[74px] items-center justify-around bg-[#EDEDED] rounded-2xl font-normal md:text-xl lg:text-2xl">
+				<li class="hover:text-sky-500 cursor-pointer">About me</li>
+				<li class="hover:text-sky-500 cursor-pointer">Skills</li>
+				<li class="hover:text-sky-500 cursor-pointer">Education</li>
+				<li class="hover:text-sky-500 cursor-pointer">Experience</li>
 			</ul>
-			<button class="w-60 md:w-[350px] h-[50px] md:h-[74px] bg-gradient-to-r from-teal-400 to-blue-500 text-white text-lg md:text-2xl font-medium py-2 md:py-4 rounded-2xl md:rounded-3xl shadow-lg hover:scale-105 hover:shadow-xl transition-all">
+			<button class="w-60 md:w-[350px] h-[50px] md:h-[74px] bg-gradient-to-r from-teal-400 to-blue-500 text-white text-lg md:text-2xl font-medium py-2 md:py-4 rounded-2xl md:rounded-3xl hover:scale-105 transition-all">
 				Contact me
 			</button>
 		</nav>
+
+		{/* Image - Small Devices */}
+		<div class="flex md:hidden justify-center mx-14 mb-14 mt-20">
+			<img class="w-40 h-40 md:w-60 md:h-60 rounded-full" src="/img/imagen_1.jpg" alt="Imagen de Victor"/>
+		</div>
+
+		{/* Image */}
+		<div class="hidden md:flex justify-center mx-14 mb-14 mt-28">
+			<img class="w-40 h-40 md:w-60 md:h-60 rounded-full" src="/img/imagen_1.jpg" alt="Imagen de Victor"/>
+		</div>
+
+		{/* Main Text */}
+		<div class=" hidden lg:flex justify-center items-center text-center mt-14 ml-14 mr-14 mb-6">
+			<h1 class="text-5xl text-[#494949]"><span class="bg-gradient-to-r from-[#6DDAC7] from-30% to-[#15ABFF] to-90%  inline-block text-transparent bg-clip-text ">Hello, I’m Victor</span>, Software Engineer <br> Based in Honduras  </h1>
+		</div>
+
+		{/*Main Text - Medium Devices */}
+		<div class="hidden md:flex lg:hidden justify-center items-center text-center mt-14 ml-14 mr-14 mb-6">
+			<h1 class="text-5xl text-[#494949]"><span class="bg-gradient-to-r from-[#6DDAC7] from-30% to-[#15ABFF] to-90%  inline-block text-transparent bg-clip-text ">Hello, I’m Victor</span> <br> Software Engineer <br> Based in Honduras  </h1>
+		</div>
+
+		{/*Main Text - Small Devices */}
+		<div class="flex md:hidden lg:hidden justify-center items-center text-center mt-14 ml-14 mr-14 mb-6">
+			<h1 class="text-5xl text-[#494949]"><span class="bg-gradient-to-r from-[#6DDAC7] from-30% to-[#15ABFF] to-90%  inline-block text-transparent bg-clip-text">Hello  I’m Victor</span> Software Engineer <br> Based in Honduras  </h1>
+		</div>
+
+		{/*Sub-Text*/}
+		<div class="hidden md:flex justify-center text-center items-center mb-14">
+			<p class="text-[#A8A8A8] text-2xl">Software Engineer and technology enthusiast, specialized <br> in backend solutions and cybersecurity.</p>
+		</div>
+
+		{/*Sub-Text - Small Devices*/}
+		<div class="flex md:hidden lg:hidden justify-center text-center items-center mb-14">
+			<p class="text-[#A8A8A8] text-2xl">Software Engineer and technology enthusiast, specialized in backend solutions and cybersecurity.</p>
+		</div>
+
+		{/*Technologies-Text*/}
+		<div class="hidden md:flex justify-center items-center text-center ml-14 mr-14 mb-14">
+			<h2 class="text-4xl text-[#494949]">Technologies I work with</h2>
+		</div>
+
+		{/*Technologies-Text*/}
+		<div class="flex md:hidden justify-center items-center text-center ml-14 mr-14 mb-6">
+			<h2 class="text-3xl text-[#494949]">Technologies I work with</h2>
+		</div>
+
+		{/*Icon Bar */}
+		<div class="hidden md:flex justify-around">
+			<div class="w-32 h-32 bg-icon-gradient mask mask-react"></div>
+			<div class="w-32 h-32 bg-icon-gradient mask mask-next"></div>
+			<div class="w-32 h-32 bg-icon-gradient mask mask-python"></div>
+			<div class="w-32 h-32 bg-icon-gradient mask mask-node"></div>
+		</div>
+
+		{/*Icon Bar - Small Devices */}
+		<div class="flex md:hidden justify-around">
+			<div>
+				<div class="w-24 h-24 bg-icon-gradient mask mask-react mb-8"></div>
+				<div class="w-24 h-24 bg-icon-gradient mask mask-next"></div>
+			</div>
+			<div>
+				<div class="w-24 h-24 bg-icon-gradient mask mask-python mb-8"></div>
+				<div class="w-24 h-24 bg-icon-gradient mask mask-node"></div>
+			</div>
+		</div>
+
+
+
 	</main>
 </Layout>
+
+<style>
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+
+	@layer utilities {
+		.mask {
+			-webkit-mask-size: contain;
+			-webkit-mask-repeat: no-repeat;
+			-webkit-mask-position: center;
+			mask-size: contain;
+			mask-repeat: no-repeat;
+			mask-position: center;
+		}
+		.mask-react {
+			-webkit-mask-image: url('/icons/react.svg');
+			mask-image: url('/icons/react.svg');
+		}
+		.mask-next {
+			-webkit-mask-image: url('/icons/next.svg');
+			mask-image: url('/icons/next.svg');
+		}
+		.mask-python {
+			-webkit-mask-image: url('/icons/python.svg');
+			mask-image: url('/icons/python.svg');
+		}
+		.mask-node {
+			-webkit-mask-image: url('/icons/node.svg');
+			mask-image: url('/icons/node.svg');
+		}
+	}
+</style>
