@@ -1,0 +1,63 @@
+---
+interface Props {
+    title: string,
+    university: string,
+    initialYear: string,
+    finalYear?: string,
+    icon: string,
+}
+
+const { title, university, initialYear, finalYear, icon } = Astro.props
+
+console.log(title, university, initialYear, finalYear)
+
+---
+
+<div class="hidden md:flex justify-center gap-32 p-6 mb-14 ">
+
+    <div class="flex gap-6">
+
+        <div class="w-auto h-14 flex flex-col justify-center items-start">
+            <p class="text-4xl font-bold text-[#494949]">{title}</p>
+            <p class="text-base text-[#494949]">{university}</p>
+        </div>
+
+    </div>
+
+    <div class="flex justify-center items-center">
+        <p class="text-2xl font-medium text-[#494949]">{initialYear} - {finalYear}</p>
+    </div>
+
+
+</div>
+
+<div class="flex md:hidden justify-between items-center w-full bg-white p-6 rounded-lg">
+
+    <div class="flex gap-6 items-center">
+        <div class="flex flex-col">
+            <p class="text-2xl font-bold text-[#494949] leading-tight">{title}</p>
+            <p class="text-base text-[#494949]">{university}</p>
+        </div>
+    </div>
+    <div class="text-right ml-2">
+        <p class="text-xl font-medium text-[#494949]">{initialYear} - {finalYear}</p>
+    </div>
+</div>
+
+
+<style>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer utilities {
+        .mask{
+            -webkit-mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            mask-position: center;
+        }
+    }
+</style>

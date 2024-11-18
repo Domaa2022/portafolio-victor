@@ -1,0 +1,23 @@
+---
+interface Props {
+    title: string,
+    icon: string,
+    description: string,
+    color: string,
+}
+
+const {title, icon , description , color} = Astro.props;
+---
+<div class="hidden w-[400px] h-72 rounded-3xl p-8 md:flex flex-col" style={{ backgroundColor: color + '78'}}>
+    <img class="w-10 h-9 float-left" src={icon} alt="logo"  />
+    <br>
+    <p class="text-[#494949] text-3xl font-semibold mb-4">{title}</p>
+    <p class="text-[#494949] text-xl text-justify">{description}</p>
+</div>
+
+<div class="flex w-auto h-auto rounded-3xl p-8 md:hidden flex-col" style={{ backgroundColor: color + '78'}}>
+    <img class="w-10 h-9 float-left" src={icon} alt="logo"  />
+    <br>
+    <p class="text-[#494949] text-3xl font-semibold mb-4">{title}</p>
+    <p class="text-[#494949] text-xl text-justify">{description}</p>
+</div>

@@ -1,0 +1,85 @@
+---
+interface Technologies {
+    icon: string,
+    name: string
+}
+
+interface Props{
+    companyTitle: string,
+    jobTitle: string,
+    iconJob: string,
+    companyImage: string,
+    description: string,
+    technologies: Technologies[]
+}
+
+const { companyTitle, jobTitle, iconJob, companyImage, description, technologies } = Astro.props
+
+
+---
+<div class=" hidden sm:flex  max-w-3xl h-auto   p-5">
+    <div class="flex flex-col">
+        <div class="flex gap-5 mb-3">
+            <img class="w-20 h-20" src={companyImage} alt="company image" />
+            <div class="flex flex-col">
+                <p class="text-5xl text-[#494949]">{companyTitle}</p>
+                <p class="text-2xl text-[#494949]">{jobTitle}</p>
+            </div>
+        </div>
+        <div>
+            <p class="text-2xl text-justify text-[#494949]">{description}</p>
+        </div>
+        <div class="flex gap-32">
+            {technologies.map( ( technology ) => (
+                    <div class="flex items-center mt-5 ml-16">
+                        <div class="w-10 h-10 bg-[#15ABFF]  mask" style={`-webkit-mask-image: url(${technology.icon}); mask-image: url(${technology.icon});`} />
+                        <p class="text-[#15ABFF] " >{technology.name}</p>
+                    </div>
+            ))}
+        </div>
+    </div>
+</div>
+
+<div class="flex w-full sm:hidden h-auto  p-10 justify-center">
+    <div class="flex flex-col items-center gap-6">
+        <img class="w-20 h-20 mb-4" src={companyImage} alt="Company Image" />
+
+        <div class="text-center">
+            <p class="text-5xl font-bold text-[#494949]">{companyTitle}</p>
+            <p class="text-2xl text-[#494949] mt-2">{jobTitle}</p>
+        </div>
+
+        <div>
+            <p class="text-lg leading-6 text-center text-[#494949]">{description}</p>
+        </div>
+
+        <div class="flex flex-wrap gap-10 justify-center mt-6">
+            {technologies.map((technology) => (
+                    <div class="flex flex-col items-center">
+                        <div
+                                class="w-12 h-12 bg-[#15ABFF] mask"
+                                style={`-webkit-mask-image: url(${technology.icon}); mask-image: url(${technology.icon}); background-color: #15ABFF;`}
+                        ></div>
+                        <p class="text-[#15ABFF] mt-2">{technology.name}</p>
+                    </div>
+            ))}
+        </div>
+    </div>
+</div>
+
+<style>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer utilities {
+        .mask{
+            -webkit-mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            mask-position: center;
+        }
+    }
+</style>
