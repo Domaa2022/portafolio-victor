@@ -14,6 +14,9 @@ const technologies: Array<Technologies> = [
   { icon: "/icons/laravel.svg", name: "Laravel" },
   { icon: "/icons/vuejs.svg", name: "Vuejs" },
 ];
+
+
+
 ---
 
 <Layout title="Portafolio, Victor Barahona">
@@ -26,12 +29,13 @@ const technologies: Array<Technologies> = [
       <ul
         class="hidden md:flex md:w-[1000px] h-[74px] items-center justify-around bg-[#EDEDED] rounded-2xl font-normal md:text-xl lg:text-2xl"
       >
-        <li class="hover:text-sky-500 cursor-pointer">About me</li>
-        <li class="hover:text-sky-500 cursor-pointer">Skills</li>
-        <li class="hover:text-sky-500 cursor-pointer">Education</li>
-        <li class="hover:text-sky-500 cursor-pointer">Experience</li>
+        <li data-section='aboutMe' class="hover:text-sky-500 cursor-pointer">About me</li>
+        <li data-section='skills' class="hover:text-sky-500 cursor-pointer">Skills</li>
+        <li data-section='experiences' class="hover:text-sky-500 cursor-pointer">Experience</li>
+        <li data-section='educations' class="hover:text-sky-500 cursor-pointer">Education</li>
       </ul>
       <button
+        data-section="contact"
         class="w-60 md:w-[350px] h-[50px] md:h-[74px] bg-gradient-to-r from-teal-400 to-blue-500 text-white text-lg md:text-2xl font-medium py-2 md:py-4 rounded-2xl md:rounded-3xl hover:scale-105 transition-all"
       >
         Contact me
@@ -147,7 +151,9 @@ const technologies: Array<Technologies> = [
 
     {/*About me - Container */}
 
-    <div>
+
+
+    <section id="aboutMe"  >
       {/* About me - Text*/}
       <div class="flex justify-center gap-8 mt-36 mb-10">
         <h2
@@ -158,17 +164,9 @@ const technologies: Array<Technologies> = [
       </div>
 
       {/* About me - Content*/}
-      <div class="hidden lg:flex justify-center gap-20">
-        <div class="flex">
-          <img
-            class="h-[621px]"
-            src="/img/imagen_2.jpeg"
-            alt="Imagen 2 de Victor"
-          />
-        </div>
-
+      <div  class="hidden lg:flex justify-center gap-20">
         <div class="max-w-xl flex flex-col justify-between text-justify">
-          <p class="text-4xl text-[#494949]">
+          <p class="text-4xl text-[#494949] mb-14">
             I am a fan of technology, since I entered this area I like
             everything that has to do with it, so I have developed in various
             areas throughout college, besides that I am a constant learner, I
@@ -208,10 +206,10 @@ const technologies: Array<Technologies> = [
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     {/*Skill-Set - Container*/}
-    <div>
+    <section id="skills">
       {/* Skill-Set - Text*/}
       <div class="flex justify-center gap-8 mt-36 mb-10">
         <h2
@@ -293,11 +291,11 @@ const technologies: Array<Technologies> = [
           />
         </div>
       </div>
-    </div>
+    </section>
 
     {/*Experience - Container */}
 
-    <div>
+    <section id="experiences">
       {/* Experience - Text*/}
       <div class="flex justify-center gap-8 mt-36 mb-10">
         <h2
@@ -317,10 +315,10 @@ const technologies: Array<Technologies> = [
           technologies={technologies}
         />
       </div>
-    </div>
+    </section>
 
     {/* Education - Container */}
-    <div class="mb-36">
+    <section id="educations" class="mb-36">
       {/* Education - Text*/}
       <div class="flex justify-center gap-8 mt-36 mb-10">
         <h2
@@ -345,37 +343,152 @@ const technologies: Array<Technologies> = [
           university="Information Risk and Security Institute"
         />
       </div>
-    </div>
+    </section>
 
-    {/*Technologies-Text*/}
-    <div
-      class="hidden md:flex justify-center items-center text-center ml-14 mr-14 mb-14"
-    >
-      <h2 class="text-4xl text-[#494949]">Contact me</h2>
-    </div>
+    {/*Contact-Container*/}
+    <section id="contact">
+      {/*Contact-Text*/}
+      <div
+          class="hidden md:flex justify-center items-center text-center ml-14 mr-14 mb-14"
+      >
+        <h2 class="text-4xl text-[#494949]">Contact me</h2>
+      </div>
 
-    {/*Technologies-Text*/}
-    <div
-      class="flex md:hidden justify-center items-center text-center ml-14 mr-14 mb-6"
-    >
-      <h2 class="text-3xl text-[#494949]">Contact me</h2>
-    </div>
+      {/*Contact-Text*/}
+      <div
+          class="flex md:hidden justify-center items-center text-center ml-14 mr-14 mb-6"
+      >
+        <h2 class="text-3xl text-[#494949]">Contact me</h2>
+      </div>
 
-    {/*Icon Bar */}
-    <div class="hidden md:flex justify-around mb-[13rem]">
-      <div class="w-32 h-32 bg-icon-gradient-bottom mask mask-phone"></div>
-      <div class="w-32 h-32 bg-icon-gradient-bottom mask mask-linkedin"></div>
-      <div class="w-32 h-32 bg-icon-gradient-bottom mask mask-mail"></div>
-    </div>
+      {/*Icon Bar */}
+      <div class="hidden md:flex justify-around mb-[13rem]">
+        <div data-section="phone" class="w-32 h-32 bg-icon-gradient-bottom mask mask-phone"></div>
+        <div data-section="linkedin" class="w-32 h-32 bg-icon-gradient-bottom mask mask-linkedin"></div>
+        <div data-section="mail" class="w-32 h-32 bg-icon-gradient-bottom mask mask-mail"></div>
+      </div>
 
-    {/*Icon Bar - Small Devices */}
-    <div class="flex flex-col justify-center items-center gap-12 md:hidden">
-      <div class="w-20 h-20 bg-icon-gradient-bottom mask mask-phone"></div>
-      <div class="w-20 h-20 bg-icon-gradient-bottom mask mask-linkedin"></div>
-      <div class="w-20 h-20 bg-icon-gradient-bottom mask mask-mail"></div>
-    </div>
+      {/*Icon Bar - Small Devices */}
+      <div class="flex flex-col justify-center items-center gap-12 md:hidden">
+        <div data-section="phone" class="w-20 h-20 bg-icon-gradient-bottom mask mask-phone"></div>
+        <div data-section="linkedin" class="w-20 h-20 bg-icon-gradient-bottom mask mask-linkedin"></div>
+        <div data-section="mail" class="w-20 h-20 bg-icon-gradient-bottom mask mask-mail"></div>
+      </div>
+
+    </section>
+
+
+
+
   </main>
+
+
+  <script>
+    let sectionOld: HTMLElement | null ;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuItems = document.querySelectorAll("[data-section]");
+      const sections = Array.from(menuItems).map((item) => {
+        const sectionId = item.getAttribute("data-section");
+        return sectionId ? document.getElementById(sectionId) : null;
+      }).filter((section): section is HTMLElement => section !== null);
+      const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const sectionId = entry.target.id;
+                const activeItem = document.querySelector(`[data-section="${sectionId}"]`) as HTMLElement;
+
+                if (sectionOld !== activeItem) {
+                  sectionOld?.classList.remove("text-sky-500");
+                  sectionOld = activeItem;
+                  activeItem?.classList.add("text-sky-500");
+                }
+              }
+            });
+          },
+          {
+            root: null,
+            threshold: 0.5,
+          }
+      );
+      sections.forEach((section) => observer.observe(section));
+      menuItems.forEach((item) => {
+        item.addEventListener("click", (event) => {
+          const section = event.currentTarget as HTMLElement;
+          const sectionMove = section?.getAttribute("data-section");
+
+          if (sectionOld !== section) {
+            sectionOld?.classList.remove("text-sky-500");
+            sectionOld = section;
+            section.classList.add("text-sky-500");
+          }
+
+          if (  sectionMove?.toString() == 'phone' || sectionMove?.toString()== 'linkedin' || sectionMove?.toString() == 'mail' ) {
+            return null
+          }else{
+            goNextSection(sectionMove);
+          }
+
+
+        });
+      });
+
+      const contactItems = document.querySelectorAll("div[data-section]");
+
+      contactItems.forEach((item) => {
+        item.addEventListener("click", (event) => {
+          const contact = event.currentTarget as HTMLElement;
+          const contactMethod = contact?.getAttribute("data-section");
+          useContactMethod(contactMethod);
+
+        })
+      })
+
+
+
+
+    });
+
+
+    const goNextSection = (sectionId: string | null) => {
+      if (!sectionId) return;
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        console.error(`No section found with id "${sectionId}"`);
+      }
+    };
+
+    const useContactMethod = (contactMethod: string | null) => {
+      if (!contactMethod) return;
+
+      switch (contactMethod) {
+        case "phone":
+          const phoneNumber = "+50496787858"; // Reemplaza con tu número de teléfono real
+          window.location.href = `tel:${phoneNumber}`;
+          break;
+        case "linkedin":
+          const url = "https://www.linkedin.com/in/victor-barahona-589139254";
+          window.location.href = encodeURI(url);
+          break;
+        case "mail":
+          const email = "vbarahona2078@gmail.com";
+          const subject = "Contacto desde el portafolio";
+          const body = "Hola Victor, me gustaría ponerme en contacto contigo.";
+          window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          break;
+
+      }
+
+
+
+    }
+
+  </script>
 </Layout>
+
 
 <style>
   @tailwind base;
@@ -424,4 +537,10 @@ const technologies: Array<Technologies> = [
       background: linear-gradient(to bottom, #6ddac7 30%, #15abff 90%);
     }
   }
+  section {
+    scroll-margin-top: 100px;
+  }
+
+
 </style>
+
